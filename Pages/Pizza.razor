@@ -1,0 +1,14 @@
+﻿@page "/pizza"
+@using BlazingPizza.Data
+@inject PizzaService PizzaSvc
+
+<h3>Pizza</h3>
+
+@code {
+private Pizza[] todaysPizzas;
+
+protected override async Task OnInitializedAsync()
+{
+    todaysPizzas = await PizzaSvc.GetPizzasAsync();
+}
+}
